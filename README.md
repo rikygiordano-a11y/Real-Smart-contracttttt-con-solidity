@@ -265,4 +265,3 @@ Sono state implementate con successo tutte le funzionalità richieste:
 - test completi
 - deploy su Sepolia
 
-Il contratto risulta funzionante, ordinato, documentato e pronto per la consegna.
