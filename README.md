@@ -79,7 +79,9 @@ Il contratto:
 
 ## Rimborso Prestito
 
-Il borrower può restituire il prestito inviando il valore corretto.
+Il borrower può restituire il prestito inviando un importo pari o superiore al totale dovuto.
+
+Per migliorare l’usabilità del contratto, se viene inviato un importo superiore al necessario, la differenza viene restituita automaticamente al borrower.
 
 Il contratto calcola automaticamente:
 
@@ -98,7 +100,6 @@ Dopo il pagamento:
 
 Ogni prestito può assumere i seguenti stati:
 
-- PENDING
 - ACTIVE
 - PAID
 - OVERDUE

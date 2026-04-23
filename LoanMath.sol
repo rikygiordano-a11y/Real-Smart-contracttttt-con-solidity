@@ -12,16 +12,13 @@ library LoanMath {
         require(amount > 0, "Importo non valido");
         require(durationInSeconds > 0, "Durata non valida");
 
-        // Converte la durata in giorni
         uint256 durationInDays = durationInSeconds / SECONDS_IN_DAY;
 
-        // Se la durata e' minore di 1 giorno, consideriamo comunque 1 giorno
         if (durationInDays == 0) {
             durationInDays = 1;
         }
 
-        // Formula semplice:
-        // interesse = amount * tasso * giorni / (100 * 365)
+
         return (amount * interestRate * durationInDays) / (100 * 365);
     }
 
@@ -36,12 +33,12 @@ library LoanMath {
 
         uint256 daysLate = (paymentDate - dueDate) / SECONDS_IN_DAY;
 
-        // Se anche qui il ritardo e' inferiore a 1 giorno, contiamo almeno 1 giorno
+       
         if (daysLate == 0) {
             daysLate = 1;
         }
 
-        // Penale semplice: 1% dell'importo per ogni giorno di ritardo
+
         return (amount * daysLate) / 100;
     }
 }

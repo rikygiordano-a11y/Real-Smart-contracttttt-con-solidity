@@ -153,14 +153,11 @@ contract LoanManager {
 
         uint256 totalToPay = loan.amount + interest + penalty;
 
-        // Correzione richiesta dal docente:
-        // non obblighiamo msg.value ad essere esattamente uguale,
-        // ma almeno uguale al totale richiesto
+       
         require(msg.value >= totalToPay, "Importo insufficiente");
 
         uint256 refund = msg.value - totalToPay;
 
-        // CHECKS + EFFECTS prima delle INTERACTIONS (CEI)
         loan.status = Status.Paid;
 
         // INTERACTIONS
